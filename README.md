@@ -24,6 +24,19 @@ Requried:
   3.4. Now we will run the wget command received from Splunk doing "sudo wget <Splunk Command>"
   3.5. Do "ls" just to confirm that it downloaded
   3.6. Now that it is in the /OPT dir, lets download it using "sudo yum install <File that was downloaded>"
+  3.7. After its downloaded we will go to the next step!
+4.0. Setting up the Web Services!
+  4.1. Run the command "sudo /opt/splunk/bin/splunk start --accept-license" This will start the splunk instance and auto accept the license!
+  4.2. Throught this process it will ask for user/pass
+  4.3. It will say that your Web Interface is hosted at YourVMName:8000
+  4.4. You are not out of the woods yet! Lets allow the firewall rule first.
+  4.5. If this was a Localhosted box you would need to run firewall-cmd --permanent --add-port=8000/tcp however... Its Azure see step 4.6
+  4.6. Go back into azure and locat your VM, click network, and add an inboud TCP connection for port 8000.
+  4.7. That's it!!!!!!!!!!!! You should now have a splunk dashboard.
+  
+  Summary: Today we setup an azure VM that hosts Splunk Enterprise. The next step I will be showing is setting up forwards and configuring splunk to accept logs!
+  
+  
   
 
 
