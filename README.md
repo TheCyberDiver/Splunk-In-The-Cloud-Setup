@@ -73,6 +73,18 @@ Requried:
   4.3. Since this is just a lab we are going to use /var/log
   4.4. run "sudo ./splunk add monitor /var/log" and then do a restart "sudo ./splunk restart"
   4.5. Now we will chnage over to splunk enterprise and see if we are receiving the logs!
-  4.6
+  4.6. Click on settings and go into indexes. By default logs will go to Main.
+5.0. Searching the data
+  5.1. Click apps in the top right and click searching and reporting
+  5.2. Now you will see near the bottom a "Data Summary" button click that and you should see everything with the /var/log folders!
+6.0. Basic Searching + scenario
+  6.1. Going into the search feature of Splunk we can easily put the index that it is using. Type "index=main" and it will pull all logs!
+  6.2. Now that we know it is searching correctly lets make a scenario.
+  6.3. Add a user to the ubuntu machine and cat out the etc/shadow or etc/passwd folder and fail the login.
+  6.4. In the Splunk Enterprise instance type "index=main (username)"
+  6.5. This should show all the logs with that user.
+  
+  ![image](https://user-images.githubusercontent.com/77608692/183504940-d44174f8-4261-4e6f-9bee-5a96e37bb499.png)
+
   
 
