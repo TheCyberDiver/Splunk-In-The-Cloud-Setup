@@ -3,7 +3,7 @@ How-to on setting up splunk in Azure
 
 ###############################################
 #            SPLUNK IN THE CLOUDS             #
-#                                             #
+#                  Brett H.                   #
 ###############################################
 
 #Edit: The VMs can be hosted in AWS, VMWare, Virtualbox, or whatever your heart desires.
@@ -37,6 +37,32 @@ Requried:
   Summary: Today we setup an azure VM that hosts Splunk Enterprise. The next step I will be showing is setting up forwards and configuring splunk to accept logs!
   
   
+###############################################
+#           Forwarders in the Clouds          #
+#                  Brett H.                   #
+###############################################
   
-
+  
+1.0. In the Splunk Enterprise web interface navigate to Settings>Forwarding and receiving.
+  1.1. Under the Receive data and click "Add New" and input port "9997" and save it.
+  1.2. Now this splunk instance is listening on port 9997 
+  1.3. We are going to navigate to the apps section in the splunk instance and then manage apps
+  1.4. Click browse more apps in the top right and type linux. For this tutorial we will grab sys logs from another linux VM!
+  1.5. We will install the splunk addon for unix and linux and input your Splunk Email and password to be able to download.
+  1.6. Create another VM. It can be another CentOS, Ubuntu, or any other linux VM. I will be using Ubuntu 20.04 LTS gen 2.
+  1.7. Navigate to https://www.splunk.com/en_us/download/universal-forwarder.html to download the .deb instead get the wget command.
+2.0. Installing the Forwarder onto the VM
+  2.1. SSH into the VM that will be used to forward the sys logs.
+  2.2. Run "cd /opt" to switch into the directory we will install the forwarder on.
+  2.3. Download wget by running "sudo apt-get install wget" 
+  2.3. Paste the "sudo wget <Splunk install command> That you received from the splunk forwarder download of the .deb file.
+  2.4. Once its done installing run "sudo dpkg -i splunkforwarder-9.0.0.1-9e907cedecb1-linux-2.6-amd64.deb"
+  2.5. Now run "sudo /opt/splunkforwarder/bin/splunk start --accept-license" it will prompt to create a user and password
+  2.6. Now run "cd /opt/splunkforwarder/bin/" so we can work in the bin dir in the splunk dir
+3.0. Connecting Splunk Universal Forwarder up to the Splunk Enterprise.
+  3.1. Run "sudo ./splunk set deploy-poll <Ip address of splunk enterprise>:8089" (port 8089 is the mngmt port) and input your credentials
+  3.2. now run "sudo ./splunk restart"
+  3.3. Just like when we downloaded splunk enterprise we had to add firewall rules. so in 3.4 we will do just that!
+  3.4. 
+  
 
