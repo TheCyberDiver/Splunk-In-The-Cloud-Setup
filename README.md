@@ -63,6 +63,16 @@ Requried:
   3.1. Run "sudo ./splunk set deploy-poll <Ip address of splunk enterprise>:8089" (port 8089 is the mngmt port) and input your credentials
   3.2. now run "sudo ./splunk restart"
   3.3. Just like when we downloaded splunk enterprise we had to add firewall rules. so in 3.4 we will do just that!
-  3.4. 
+  3.4. On the Splunk Enterprise instance we will allow an inboud rule from port 8089 and 9997.
+  3.5. Go back to splunk enterprise and naviagte to Settings>Forwarder Management. Mine shows up as No-Fun-Tech-Comp1-Forwarder which is the name of the VM I made
+  3.6. Note: If it does not show up restart the forwarder instance again and refresh the splunk enterprise page.
+  3.7. Now that we have the connection we will forward the data from the Sys log folder in the Ubuntu Instance.
+4.0 Forwarding the Syslogs from the Ubuntu instance into Splunk Enterprise
+  4.1. We will simply run this command on the universal forwarder ubuntu instance "sudo ./splunk add forward-server <Ipaddress of Splunk Enterprise:9997"
+  4.2. It will ask for your user and password and then will say "added forwarding to <Splunk Enterprise IP>
+  4.3. Since this is just a lab we are going to use /var/log
+  4.4. run "sudo ./splunk add monitor /var/log" and then do a restart "sudo ./splunk restart"
+  4.5. Now we will chnage over to splunk enterprise and see if we are receiving the logs!
+  4.6
   
 
