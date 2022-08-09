@@ -73,7 +73,7 @@ Requried:
   
     1.4. Click browse more apps in the top right and type linux. For this tutorial we will grab sys logs from another linux VM!
   
-   1.5. We will install the splunk addon for unix and linux and input your Splunk Email and password to be able to download.
+    1.5. We will install the splunk addon for unix and linux and input your Splunk Email and password to be able to download.
   
     1.6. Create another VM. It can be another CentOS, Ubuntu, or any other linux VM. I will be using Ubuntu 20.04 LTS gen 2.
   
@@ -113,7 +113,7 @@ Requried:
   
   4.0 Forwarding the Syslogs from the Ubuntu instance into Splunk Enterprise
   
-   4.1. We will simply run this command on the universal forwarder ubuntu instance "sudo ./splunk add forward-server <Ipaddress of Splunk Enterprise:9997"
+    4.1. We will simply run this command on the universal forwarder ubuntu instance "sudo ./splunk add forward-server <Ipaddress of Splunk Enterprise:9997"
   
     4.2. It will ask for your user and password and then will say "added forwarding to <Splunk Enterprise IP>
   
