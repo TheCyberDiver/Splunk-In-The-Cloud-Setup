@@ -1,10 +1,10 @@
-# Splunk-In-The-Cloud-Setup
-How-to on setting up splunk in Azure
-
 ###############################################
 #            SPLUNK IN THE CLOUDS             #
 #                  Brett H.                   #
 ###############################################
+
+![image](https://user-images.githubusercontent.com/77608692/184009205-34023ec0-d5a9-4dfa-b388-87e543c3608e.png)
+
 
 #Edit: The VMs can be hosted in AWS, VMWare, Virtualbox, or whatever your heart desires.
 
