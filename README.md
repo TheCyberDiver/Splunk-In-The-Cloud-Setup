@@ -29,7 +29,7 @@ Requried:
 
     3.3. Now we need to install wget to be able to run the command to install Splunk to do that run "sudo yum install wget"
 
-    3.4. Now we will run the wget command received from Splunk doing "sudo wget <Splunk Command>"
+    3.4. Now we will run the wget command received from Splunk doing "sudo wget -O <Splunk Command>"
 
     3.5. Do "ls" just to confirm that it downloaded
 
